@@ -87,6 +87,7 @@ public class MCJS extends Plugin {
 
 		try {
 			jsEngine.put( "PATH", getPluginDir() );
+			jsEngine.put( "SERVER", net.md_5.bungee.api.ProxyServer );
 			jsEngine.eval( "var global     = {};" );
 			jsEngine.eval( "var __instance = {};" );
 			jsEngine.eval( "__instance.scope = function ( code ) { return eval( code ); }" );
