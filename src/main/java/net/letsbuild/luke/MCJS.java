@@ -1,6 +1,7 @@
 package net.letsbuild.luke;
 
 import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.api.ProxyServer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -87,7 +88,7 @@ public class MCJS extends Plugin {
 
 		try {
 			jsEngine.put( "PATH", getPluginDir() );
-			jsEngine.put( "SERVER", net.md_5.bungee.api.ProxyServer );
+			jsEngine.put( "SERVER", ProxyServer );
 			jsEngine.eval( "var global     = {};" );
 			jsEngine.eval( "var __instance = {};" );
 			jsEngine.eval( "__instance.scope = function ( code ) { return eval( code ); }" );
