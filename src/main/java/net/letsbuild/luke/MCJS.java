@@ -88,7 +88,8 @@ public class MCJS extends Plugin {
 
 		try {
 			jsEngine.put( "PATH", getPluginDir() );
-			jsEngine.put( "SERVER", ProxyServer );
+			jsEngine.put( "__plugin", plugin );
+			jsEngine.put( "__server", ProxyServer );
 			jsEngine.eval( "var global     = {};" );
 			jsEngine.eval( "var __instance = {};" );
 			jsEngine.eval( "__instance.scope = function ( code ) { return eval( code ); }" );
