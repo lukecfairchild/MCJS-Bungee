@@ -17,7 +17,10 @@ import javax.script.ScriptException;
 
 public class reload extends Command {
 
-	super( "js" );
+	public reload () {
+
+		super( "js" );
+	}
 
 	@Override
 	public void execute( CommandSender commandSender, String[] strings ) {
