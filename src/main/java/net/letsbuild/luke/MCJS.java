@@ -2,7 +2,6 @@ package net.letsbuild.luke;
 
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
-import net.md_5.bungee.command;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,26 +13,6 @@ import java.nio.file.Paths;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
-public class reload extends Command {
-
-	public reload () {
-
-		super( "js" );
-	}
-
-	@Override
-	public void execute( CommandSender commandSender, String[] strings ) {
-
-		commandSender.sendMessage(
-			new ComponentBuilder( "Reloading MCJS" ).color(
-				ChatColor.GREEN
-			).create()
-		);
-
-		ProxyServer.getPluginManager().getPlugin( "MCJS" ).reload();
-	}
-}
 
 public class MCJS extends Plugin {
 
@@ -88,12 +67,11 @@ public class MCJS extends Plugin {
 		return javascript;
 	}
 
+
 	@Override
 	public void onEnable () {
 
 		plugin = this;
-
-		ProxyServer.getPluginManager().registerCommand( this, new reloadCommand() );
 
 
 		/**
@@ -123,6 +101,7 @@ public class MCJS extends Plugin {
 		}
 	}
 
+
 	@Override
 	public void onDisable () {
 
@@ -142,6 +121,7 @@ public class MCJS extends Plugin {
 			e.printStackTrace();
 		}
 	}
+
 
 	public void reload () {
 
