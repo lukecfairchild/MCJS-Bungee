@@ -27,6 +27,17 @@ public class MCJS extends Plugin {
 	public void reloadCommand () {
 
 		super( "js");
+	}
+
+	@Override
+	public void execute( CommandSender commandSender, String[] strings ) {
+
+		commandSender.sendMessage(
+			new ComponentBuilder( "Hello world!" ).color(
+				ChatColor.GREEN
+			).create()
+		);
+
 		reload();
 	}
 
@@ -73,7 +84,6 @@ public class MCJS extends Plugin {
 		return javascript;
 	}
 
-
 	@Override
 	public void onEnable () {
 
@@ -109,7 +119,6 @@ public class MCJS extends Plugin {
 		}
 	}
 
-
 	@Override
 	public void onDisable () {
 
@@ -129,7 +138,6 @@ public class MCJS extends Plugin {
 			e.printStackTrace();
 		}
 	}
-
 
 	public void reload () {
 
