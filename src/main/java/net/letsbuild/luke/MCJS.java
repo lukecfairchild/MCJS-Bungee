@@ -24,6 +24,12 @@ public class MCJS extends Plugin {
 	private static String pluginDir;
 	private static String jsFilePath;
 
+	public reloadCommand () {
+
+		super( "js");
+		reload();
+	}
+
 	private String getPluginDir () {
 
 		if ( pluginDir == null ) {
@@ -72,6 +78,8 @@ public class MCJS extends Plugin {
 	public void onEnable () {
 
 		plugin = this;
+
+		ProxyServer.getPluginManager().registerCommand( this, new reloadCommand() );
 
 
 		/**
