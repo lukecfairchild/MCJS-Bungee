@@ -24,7 +24,7 @@ public class MCJS extends Plugin {
 	private static String pluginDir;
 	private static String jsFilePath;
 
-	public reloadCommand () {
+	public void reloadCommand () {
 
 		super( "js");
 		reload();
