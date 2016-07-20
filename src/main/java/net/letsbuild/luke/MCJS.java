@@ -31,7 +31,7 @@ public class reload extends Command {
 			).create()
 		);
 
-		ProxyServer.getPluginManager().getPlugin( 'MCJS' ).reload();
+		ProxyServer.getPluginManager().getPlugin( "MCJS" ).reload();
 	}
 }
 
